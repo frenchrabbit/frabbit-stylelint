@@ -1,6 +1,6 @@
 'use strict'
 
-const names = '^[_-:]?[a-z][a-z0-9-]+?[a-z0-9]$'
+const names = '^[_-]?[a-z][a-z0-9-]+?[a-z0-9]$'
 
 module.exports = {
   extends: [
@@ -49,7 +49,7 @@ module.exports = {
         'at-rules',
       ],
     ],
-    'function-url-no-scheme-relative': true, // use explicit https
+    'function-url-no-scheme-relative': true,
     'function-url-quotes': 'always',
     'media-feature-name-no-unknown': true,
     'media-query-list-comma-newline-before': 'never-multi-line',
@@ -61,30 +61,39 @@ module.exports = {
     'value-no-vendor-prefix': true,
     'selector-no-vendor-prefix': true,
 
-    'scss/double-slash-comment-whitespace-inside': 'always',
+    // 'scss/double-slash-comment-whitespace-inside': 'always',
     'scss/declaration-nested-properties': 'never',
     'scale-unlimited/declaration-strict-value': [
       ['/color/', 'z-index', 'font-size', 'font-family'],
       {
-        'ignoreKeywords': {
+        ignoreKeywords: {
           '': ['inherit'],
-          '/color/': ['currentColor', 'transparent', 'inherit'],
+          '/color/': ['currentColor', 'transparent', 'inherit', 'auto', 'none']
         },
+        // autofix function should be project specific https://github.com/AndyOGo/stylelint-declaration-strict-value
+        autoFixFunc: function () {},
+        disableFix: false
       },
     ],
     'scss/dollar-variable-no-missing-interpolation': true,
     'scss/dollar-variable-colon-space-after': 'always',
     'scss/dollar-variable-colon-space-before': 'never',
     'scss/dollar-variable-pattern': names,
-    'scss/no-duplicate-dollar-variables': true,
+    'scss/no-duplicate-dollar-variables': [
+      true,
+      {
+        ignoreInside: ["at-rule", "nested-at-rule"],
+        ignoreInsideAtRules: ["if", "mixin", "each", "else"]
+      }
+    ],
     'scss/percent-placeholder-pattern': names,
     'scss/at-extend-no-missing-placeholder': true,
-    'scss/at-mixin-named-arguments': 'always',
-    'scss/at-mixin-parentheses-space-before': 'always',
-    'scss/at-mixin-argumentless-call-parentheses': 'always',
+    // 'scss/at-mixin-named-arguments': 'always',
+    'scss/at-mixin-parentheses-space-before': 'never',
+    'scss/at-mixin-argumentless-call-parentheses': 'never',
     'scss/at-mixin-pattern': names,
-    'scss/at-function-named-arguments': 'always',
-    'scss/at-function-parentheses-space-before': 'always',
+    // 'scss/at-function-named-arguments': 'always',
+    'scss/at-function-parentheses-space-before': 'never',
     'scss/at-function-pattern': names,
     'scss/operator-no-newline-before': true,
     'scss/operator-no-newline-after': true,
@@ -121,7 +130,7 @@ module.exports = {
 
     'plugin/no-low-performance-animation-properties': true,
     'plugin/stylelint-no-indistinguishable-colors': true,
-    'plugin/selector-tag-no-without-class': ['div', 'span'],
+    // 'plugin/selector-tag-no-without-class': ['div', 'span'],
     'plugin/declaration-block-no-ignored-properties': true,
     'plugin/no-unsupported-browser-features': [
       true, { 'severity': 'warning' },
