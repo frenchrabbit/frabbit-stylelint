@@ -15,6 +15,7 @@ module.exports = {
     'stylelint-color-format',
     'stylelint-high-performance-animation',
     'stylelint-no-indistinguishable-colors',
+    'stylelint-no-unsupported-browser-features',
     'stylelint-selector-tag-no-without-class',
     'stylelint-use-nesting',
     'stylelint-csstree-validator',
