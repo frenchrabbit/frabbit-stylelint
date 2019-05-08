@@ -122,6 +122,9 @@ module.exports = {
     'plugin/stylelint-no-indistinguishable-colors': true,
     'plugin/selector-tag-no-without-class': ['div', 'span'],
     'plugin/declaration-block-no-ignored-properties': true,
+    'plugin/no-unsupported-browser-features': [
+      true, { 'severity': 'warning' },
+    ],
 
     'csstools/use-nesting': 'always',
     'csstree/validator': true,
