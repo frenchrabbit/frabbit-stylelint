@@ -1,6 +1,6 @@
 {
   "name": "frabbit-stylelint",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "frabbit stylelint config",
   "main": "index.js",
   "repository": "https://github.com/frenchrabbit/frabbit-stylelint",
