@@ -28,6 +28,11 @@ module.exports = {
     'font-weight-notation': 'numeric',
     'order/order': [
       [
+        {
+          'type': 'at-rule',
+          'name': 'import',
+          'hasBlock': false,
+        },
         'custom-properties',
         'dollar-variables',
         {
