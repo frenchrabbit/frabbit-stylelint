@@ -12,7 +12,7 @@ module.exports = {
     'stylelint-order',
     'stylelint-declaration-strict-value',
     'stylelint-declaration-block-no-ignored-properties',
-    'stylelint-color-format',
+    // 'stylelint-color-format',
     'stylelint-high-performance-animation',
     'stylelint-no-indistinguishable-colors',
     'stylelint-no-unsupported-browser-features',
@@ -126,7 +126,7 @@ module.exports = {
     'scss/at-if-closing-brace-newline-after': 'always-last-in-chain',
     'scss/at-if-closing-brace-space-after': 'always-intermediate',
     'color-named': 'never',
-    'color-format/format': { 'format': 'rgb' },
+    // 'color-format/format': { 'format': 'rgb' },
 
     'plugin/no-low-performance-animation-properties': true,
     'plugin/stylelint-no-indistinguishable-colors': true,
