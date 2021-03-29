@@ -2225,9 +2225,9 @@ style-search@^0.1.0:
   integrity sha1-eVjHk+R+MuB9K1yv5cC/jhLneQI=
 
 stylelint-color-format@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/stylelint-color-format/-/stylelint-color-format-1.0.0.tgz#ac6e27398ce4c356cf697b16e8b9484e1fc02b61"
-  integrity sha512-IzJeGsnMbaf/JFkv/rrBJJ7+nW384/pCW3G7/p3U1vIbdIgbkk/yuKXB16Z9+AYm1O+/FoKT6I+JWWZaNJPhmQ==
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/stylelint-color-format/-/stylelint-color-format-1.1.0.tgz#f24c4f70d5b78299e885c6c297b9fecd4a4c630b"
+  integrity sha512-3VLzcNjspKuUcZJz6MsIrwf3cQfR1HPXf+skZ11ayvhTQscgmwRz6gVgiqxkbz6TLGMkkVsqP7UkVdBqznkMcQ==
   dependencies:
     color "^3.0.0"
     style-search "^0.1.0"
