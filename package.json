@@ -22,6 +22,6 @@
     "stylelint-order": "^4.0.0",
     "stylelint-scss": "^3.14.2",
     "stylelint-selector-tag-no-without-class": "^2.0.2",
-    "stylelint-use-nesting": "^2.0.0"
+    "stylelint-use-nesting": "^3.0.0"
   }
 }
