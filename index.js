@@ -9,22 +9,47 @@ module.exports = {
     'stylelint-declaration-block-no-ignored-properties',
     // 'stylelint-color-format',
     'stylelint-high-performance-animation',
-    'stylelint-no-indistinguishable-colors',
+    // 'stylelint-no-indistinguishable-colors',
     'stylelint-no-unsupported-browser-features',
-    'stylelint-selector-tag-no-without-class',
+    // 'stylelint-selector-tag-no-without-class',
     'stylelint-use-nesting',
     'stylelint-csstree-validator',
   ],
 
   extends: [
-    'stylelint-config-standard',
-    'stylelint-config-recommended-scss',
+    // 'stylelint-config-standard',
+    'stylelint-config-standard-scss',
+    'stylelint-config-recommended-vue/scss',
     'stylelint-config-prettier'
   ],
 
   rules: {
     'max-nesting-depth': 4,
     'font-weight-notation': 'numeric',
+    'at-rule-empty-line-before': ['always', {
+        except: [
+          "after-same-name",
+          // "inside-block",
+          // "blockless-after-same-name-blockless",
+          // "blockless-after-blockless",
+          "first-nested"
+        ]
+      }],
+    'rule-empty-line-before': ["always", {
+      // ignore: ["after-comment", "first-nested"],
+      except: ["after-single-line-comment", "first-nested"]
+    }],
+
+    'shorthand-property-no-redundant-values': true,
+
+    'selector-pseudo-element-no-unknown': [true, {
+      ignorePseudoElements: ["v-deep"]
+    }],
+
+    "value-list-comma-newline-after": "always-multi-line",
+    "value-list-comma-space-after": "always-single-line",
+    "value-list-comma-space-before": "never",
+
     'order/order': [
       [
         {
@@ -32,8 +57,8 @@ module.exports = {
           'name': 'import',
           'hasBlock': false,
         },
-        'custom-properties',
         'dollar-variables',
+        'custom-properties',
         {
           'type': 'at-rule',
           'name': 'include',
@@ -45,12 +70,22 @@ module.exports = {
         },
         'declarations',
         'rules',
-        'at-rules',
         {
+          "type": "rule",
+          "selector": "/^&/"
+        },
+        {
+          "type": "rule",
+          "selector": "/^&:\\w/"
+        },
+        {
+          // mixins
           'type': 'at-rule',
           'name': 'include',
           'hasBlock': true,
+          "emptyLineBefore": true
         },
+        'at-rules',
       ],
     ],
     'function-url-no-scheme-relative': true,
@@ -108,7 +143,7 @@ module.exports = {
     // 'color-format/format': { 'format': 'rgb' },
 
     'plugin/no-low-performance-animation-properties': [true, { ignoreProperties: ['color', 'background-color'] }],
-    'plugin/stylelint-no-indistinguishable-colors': true,
+    // 'plugin/stylelint-no-indistinguishable-colors': true,
     // 'plugin/selector-tag-no-without-class': ['div', 'span'],
     'plugin/declaration-block-no-ignored-properties': true,
     'plugin/no-unsupported-browser-features': [
@@ -116,6 +151,18 @@ module.exports = {
     ],
 
     'csstools/use-nesting': 'always',
-    'csstree/validator': true,
+
+    // "csstree/validator": {
+    //   "syntaxExtensions": ["sass"],
+    //   "types": {
+    //     "length": "| <rem()> | rem | test",
+    //     "<length>": "| <rem()> | rem | test",
+    //     "rem()": "rem( <length> )",
+    //
+    //   },
+    //   "properties": {
+    //     "width": "| rem( <length> )",
+    //   }
+    // }
   }
 }

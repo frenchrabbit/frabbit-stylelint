@@ -1,19 +1,28 @@
-@import '~assets/scss/v3/vars';
-@import '~assets/scss/v3/mixins';
+@import 'vars';
+@import 'mixins';
+
+// comment
 
 $breakpoint: md;
 
 .title {
-  color: #000;
   margin-top: rem(15px);
+  top: rem(15px);
+  width: rem(15px);
+
+& span {
+  color: red;
+}
+
   @include from-br($breakpoint) {
     margin-top: rem(20px);
   }
 }
 
-.subtitle {
-  color: $color-gray-3;
+.subtitle::v-deep {
+  color: $color;
   margin-top: rem(5px);
+
   @include from-br($breakpoint) {
     margin-top: rem(10px);
   }
@@ -31,5 +40,9 @@ $breakpoint: md;
 
 .desktop {
   display: none;
+
+  &.act {
+    display: block;
+  }
 }
 
