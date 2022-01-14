@@ -1,0 +1,35 @@
+@import '~assets/scss/v3/vars';
+@import '~assets/scss/v3/mixins';
+
+$breakpoint: md;
+
+.title {
+  color: #000;
+  margin-top: rem(15px);
+  @include from-br($breakpoint) {
+    margin-top: rem(20px);
+  }
+}
+
+.subtitle {
+  color: $color-gray-3;
+  margin-top: rem(5px);
+  @include from-br($breakpoint) {
+    margin-top: rem(10px);
+  }
+}
+
+@include from-br($breakpoint) {
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    display: block;
+  }
+}
+
+.desktop {
+  display: none;
+}
+

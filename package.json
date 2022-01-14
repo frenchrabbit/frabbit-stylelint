@@ -1,12 +1,15 @@
 {
   "name": "frabbit-stylelint",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "frabbit stylelint config",
   "main": "index.js",
   "repository": "https://github.com/frenchrabbit/frabbit-stylelint",
   "author": "frenchrabbit <hello@frenchrabbit.ru>",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "test": "stylelint --config index.js --fix test/test.scss"
+  },
   "dependencies": {
     "postcss": "^8.4.5",
     "postcss-scss": "^4.0.3",
@@ -15,7 +18,9 @@
     "stylelint-color-format": "^1.1.0",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-recommended-scss": "^5.0.2",
+    "stylelint-config-recommended-vue": "^1.1.0",
     "stylelint-config-standard": "^24.0.0",
+    "stylelint-config-standard-scss": "^3.0.0",
     "stylelint-csstree-validator": "^2.0.0",
     "stylelint-declaration-block-no-ignored-properties": "^2.5.0",
     "stylelint-declaration-strict-value": "^1.8.0",
