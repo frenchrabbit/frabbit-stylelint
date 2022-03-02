@@ -3,6 +3,16 @@
 const names = '^[_-]?[a-z][a-z0-9-]+?[a-z0-9]$'
 
 module.exports = {
+  // overrides: [
+  //   {
+  //     files: ['**/*.(scss|css)'],
+  //     customSyntax: 'postcss-scss',
+  //   },
+  //   {
+  //     files: ['**/*.(html|vue)'],
+  //     customSyntax: 'postcss-html',
+  //   },
+  // ],
   plugins: [
     'stylelint-order',
     'stylelint-declaration-strict-value',
@@ -14,6 +24,8 @@ module.exports = {
     // 'stylelint-selector-tag-no-without-class',
     'stylelint-use-nesting',
     'stylelint-csstree-validator',
+    'stylelint-sass-render-errors',
+    'stylelint-prettier'
   ],
 
   extends: [
@@ -24,8 +36,17 @@ module.exports = {
   ],
 
   rules: {
+    "prettier/prettier": true,
+    "plugin/sass-render-errors": true,
+    'selector-class-pattern': names,
     'max-nesting-depth': 4,
     'font-weight-notation': 'numeric',
+    'value-keyword-case': [
+      'lower',
+      {
+        camelCaseSvgKeywords: true,
+      },
+    ],
     'at-rule-empty-line-before': ['always', {
         except: [
           "after-same-name",
@@ -33,7 +54,8 @@ module.exports = {
           // "blockless-after-same-name-blockless",
           // "blockless-after-blockless",
           "first-nested"
-        ]
+        ],
+      ignoreAtRules: ['else']
       }],
     'rule-empty-line-before': ["always", {
       // ignore: ["after-comment", "first-nested"],
@@ -52,6 +74,11 @@ module.exports = {
 
     'order/order': [
       [
+        {
+          'type': 'at-rule',
+          'name': 'use',
+          'hasBlock': false,
+        },
         {
           'type': 'at-rule',
           'name': 'import',
@@ -150,19 +177,44 @@ module.exports = {
       true, { 'severity': 'warning' },
     ],
 
+    'scss/operator-no-newline-after': null,
+    'scss/operator-no-newline-before': null,
+
     'csstools/use-nesting': 'always',
 
-    // "csstree/validator": {
-    //   "syntaxExtensions": ["sass"],
-    //   "types": {
-    //     "length": "| <rem()> | rem | test",
-    //     "<length>": "| <rem()> | rem | test",
-    //     "rem()": "rem( <length> )",
-    //
-    //   },
-    //   "properties": {
-    //     "width": "| rem( <length> )",
-    //   }
-    // }
+    "csstree/validator": {
+      "syntaxExtensions": ["sass"],
+      "ignoreAtrules": ['if', 'else'],
+      "types": {
+        "length": "| <rem()> | rem ",
+        "<length>": "| <rem()> | rem",
+        "rem()": "rem( <length> )",
+
+      },
+      "properties": {
+        "length": "|  rem( <length> ) ",
+        "<length>": "|  rem( <length> ) ",
+        "width": "| rem( <length> ) | fit-content",
+        "height": "| rem( <length> )",
+        "min-width": "| rem( <length> )",
+        "min-height": "| rem( <length> )",
+        "font-size": "| rem( <length> )",
+        "line-height": "| rem( <length> )",
+        "top": "| rem( <length> )",
+        "left": "| rem( <length> )",
+        "right": "| rem( <length> )",
+        "bottom": "| rem( <length> )",
+        "padding-left": "| rem( <length> )",
+        "padding-right": "| rem( <length> )",
+        "padding-top": "| rem( <length> )",
+        "padding-bottom": "| rem( <length> )",
+        "padding": "| [<length>|<percentage>|rem( <length> )]{1,4}",
+        "margin-left": "| rem( <length> )",
+        "margin-right": "| rem( <length> )",
+        "margin-top": "| rem( <length> )",
+        "margin-bottom": "| rem( <length> )",
+        "border-radius": "| rem( <length> )",
+      }
+    }
   }
 }
