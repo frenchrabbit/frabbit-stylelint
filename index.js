@@ -182,6 +182,18 @@ module.exports = {
 
     'csstools/use-nesting': 'always',
 
+    "function-no-unknown": [
+      true,
+      {
+        "ignoreFunctions": [
+          "/^map\\..+/",
+          "/^color\\..+/",
+          "/^math\\..+/",
+          "/^list\\..+/"
+        ]
+      }
+    ],
+
     "csstree/validator": {
       "syntaxExtensions": ["sass"],
       "ignoreAtrules": ['if', 'else'],
@@ -197,9 +209,12 @@ module.exports = {
         "width": "| rem( <length> ) | fit-content",
         "height": "| rem( <length> )",
         "min-width": "| rem( <length> )",
+        "max-width": "| rem( <length> )",
         "min-height": "| rem( <length> )",
+        "max-height": "| rem( <length> )",
         "font-size": "| rem( <length> )",
         "line-height": "| rem( <length> )",
+        "gap": "| rem( <length> )",
         "top": "| rem( <length> )",
         "left": "| rem( <length> )",
         "right": "| rem( <length> )",
@@ -213,7 +228,9 @@ module.exports = {
         "margin-right": "| rem( <length> )",
         "margin-top": "| rem( <length> )",
         "margin-bottom": "| rem( <length> )",
+        "margin": "| [<length>|<percentage>|rem( <length> )|auto]{1,4}",
         "border-radius": "| rem( <length> )",
+        "letter-spacing": "| rem( <length> )",
       }
     }
   }
