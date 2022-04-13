@@ -55,6 +55,13 @@ module.exports = {
           // "blockless-after-blockless",
           "first-nested"
         ],
+      ignore: [
+        "after-comment",
+        "first-nested",
+        // "inside-block",
+        "blockless-after-same-name-blockless",
+        "blockless-after-blockless"
+      ],
       ignoreAtRules: ['else']
       }],
     'rule-empty-line-before': ["always", {
