@@ -1,6 +1,6 @@
 {
   "name": "frabbit-stylelint",
-  "version": "0.6.23",
+  "version": "0.6.24",
   "description": "frabbit stylelint config",
   "main": "index.js",
   "repository": "https://github.com/frenchrabbit/frabbit-stylelint",
@@ -30,8 +30,7 @@
     "stylelint-order": "^5.0.0",
     "stylelint-prettier": "^2.0.0",
     "stylelint-sass-render-errors": "^3.0.0",
-    "stylelint-scss": "^4.2.0",
-    "stylelint-use-nesting": "^3.0.0"
+    "stylelint-scss": "^4.2.0"
   },
   "devDependencies": {
     "sass": "^1.50.0"
