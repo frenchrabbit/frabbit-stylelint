@@ -22,7 +22,6 @@ module.exports = {
     // 'stylelint-no-indistinguishable-colors',
     'stylelint-no-unsupported-browser-features',
     // 'stylelint-selector-tag-no-without-class',
-    'stylelint-use-nesting',
     'stylelint-csstree-validator',
     'stylelint-sass-render-errors',
     'stylelint-prettier'
@@ -140,7 +139,7 @@ module.exports = {
       ['/color/', 'z-index', 'font-size', 'font-family'],
       {
         ignoreKeywords: {
-          '': ['inherit'],
+          '': ['inherit', '0'],
           '/color/': ['currentColor', 'transparent', 'inherit', 'auto', 'none']
         },
         // autofix function should be project specific https://github.com/AndyOGo/stylelint-declaration-strict-value
@@ -187,8 +186,6 @@ module.exports = {
     'scss/operator-no-newline-after': null,
     'scss/operator-no-newline-before': null,
 
-    'csstools/use-nesting': 'always',
-
     "function-no-unknown": [
       true,
       {
@@ -221,6 +218,7 @@ module.exports = {
         "max-height": "| rem( <length> )",
         "font-size": "| rem( <length> )",
         "line-height": "| rem( <length> )",
+        "content": "| attr( <attr-name> <type-or-unit>? [, <attr-fallback> ]? )",
         "gap": "| rem( <length> )",
         "top": "| rem( <length> )",
         "left": "| rem( <length> )",
@@ -230,7 +228,7 @@ module.exports = {
         "padding-right": "| rem( <length> )",
         "padding-top": "| rem( <length> )",
         "padding-bottom": "| rem( <length> )",
-        "padding": "| [<length>|<percentage>|rem( <length> )]{1,4}",
+        "padding": "| [<length>|<percentage>|rem( <length> )]{1,4} | rem( <length>{1,4} )",
         "margin-left": "| rem( <length> )",
         "margin-right": "| rem( <length> )",
         "margin-top": "| rem( <length> )",
@@ -238,6 +236,8 @@ module.exports = {
         "margin": "| [<length>|<percentage>|rem( <length> )|auto]{1,4}",
         "border-radius": "| rem( <length> )",
         "letter-spacing": "| rem( <length> )",
+        "row-gap": "| rem( <length> )",
+        "column-gap": "| rem( <length> )",
       }
     }
   }
