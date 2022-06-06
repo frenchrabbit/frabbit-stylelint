@@ -208,8 +208,8 @@ module.exports = {
 
       },
       "properties": {
-        "length": "|  rem( <length> ) ",
-        "<length>": "|  rem( <length> ) ",
+        "length": "| rem( <length> ) ",
+        "<length>": "| rem( <length> ) ",
         "width": "| rem( <length> ) | fit-content",
         "height": "| rem( <length> )",
         "min-width": "| rem( <length> )",
@@ -219,7 +219,7 @@ module.exports = {
         "font-size": "| rem( <length> )",
         "line-height": "| rem( <length> )",
         "content": "| attr( <attr-name> <type-or-unit>? [, <attr-fallback> ]? )",
-        "gap": "| rem( <length> )",
+
         "top": "| rem( <length> )",
         "left": "| rem( <length> )",
         "right": "| rem( <length> )",
@@ -238,6 +238,7 @@ module.exports = {
         "letter-spacing": "| rem( <length> )",
         "row-gap": "| rem( <length> )",
         "column-gap": "| rem( <length> )",
+        "gap": "| [rem( <length> )]{1,2}",
       }
     }
   }
