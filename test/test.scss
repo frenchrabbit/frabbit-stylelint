@@ -6,25 +6,29 @@
 $breakpoint: md;
 
 .title {
-  margin-top: rem(15px);
   top: rem(15px);
   width: rem(15px);
-  border-radius: rem(100px);
+  margin-top: rem(15px);
   padding: 0 rem(28px) 0 rem(17px);
-
-  span {
-    padding-bottom: $p20;
-    color: #f00;
-  }
+  border-radius: rem(100px);
 
   @include from-br($breakpoint) {
     margin-top: rem(20px);
   }
 }
 
-.subtitle::v-deep {
-  color: $color;
+.title span {
+  padding-bottom: $p20;
+  color: #f00;
+}
+
+.wrapper .title {
+  background: red;
+}
+
+.subtitle::v-deep() {
   margin-top: rem(5px);
+  color: $color;
 
   @include from-br($breakpoint) {
     margin-top: rem(10px);
